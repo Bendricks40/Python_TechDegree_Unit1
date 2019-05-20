@@ -59,9 +59,9 @@ def start_game(score):
                 if valid_guess_count < top_score:
                     top_score = valid_guess_count
                 play_again = input("\nWould you like to play again? (y/n): ")
-                if play_again == "y":
+                if play_again.lower() == "y":
                     start_game(top_score)
-                elif play_again != "y":
+                elif play_again.lower() != "y":
                     print("\nThanks for playing! \n")
 
             elif user_answer == solution and valid_guess_count == 1:
