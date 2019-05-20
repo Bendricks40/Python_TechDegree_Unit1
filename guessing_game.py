@@ -54,7 +54,7 @@ def start_game(score):
                 print("\nNice try, but that guess is LOWER than the solution. "
                       "Try again! Total guess count so far: {}".format(valid_guess_count))
             elif user_answer == solution and valid_guess_count > 1:
-                print("Excellent!! You have guessed correctly!! {} is indeed the correct answer, "
+                print("\nExcellent!! You have guessed correctly!! {} is indeed the correct answer, "
                       "and it took you {} guesses".format(user_answer, valid_guess_count))
                 if valid_guess_count < top_score:
                     top_score = valid_guess_count
@@ -65,14 +65,14 @@ def start_game(score):
                     print("\nThanks for playing! \n")
 
             elif user_answer == solution and valid_guess_count == 1:
-                print("WOW!!! Telepathy runs deep with you I see. "
+                print("\nWOW!!! "
                       "{} is indeed the correct answer, and it only took you 1 try. Amazing!!".format(user_answer))
                 top_score = 1
                 play_again = input("\nWould you like to play again? (y/n): ")
-                if play_again == "y":
+                if play_again.lower() == "y":
                     start_game(top_score)
-                elif play_again != "y":
-                    print("\nThanks for playing! \n")
+                elif play_again.lower() != "y":
+                    print("\nThanks for playing!\n")
         except ValueError as e:
             print("Not a valid integer. Please try again! \n\n(For my fellow nerds, here is the error message: {})".format(e))
 
